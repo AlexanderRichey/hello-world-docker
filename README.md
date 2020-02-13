@@ -12,4 +12,7 @@ $ docker build -t hello .
 
 # Run the image
 $ docker run -p 5000:5000 hello
+
+# Run in development mode
+$ docker run -p 5000:5000 -v $(pwd):/var/www -e FLASK_APP=hello.py -e FLASK_ENV=development hello flask run --host 0.0.0.0
 ```
