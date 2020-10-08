@@ -1,4 +1,5 @@
 import os
+from pprint import pformat
 from flask import Flask
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ COUNT = 0
 def hello():
     global COUNT
     COUNT += 1
-    danger = os.environ
+    danger = pformat(dict(**os.environ))
     return f"""
 <!DOCTYPE html>
 <html>
